@@ -1,4 +1,6 @@
+
 {
+
   "menu": [
     {
       "url": "/",
@@ -6,11 +8,73 @@
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "pages-home"
     },
+
     {
-      "url": "/page-2",
+      "url": "/casa/show/{{ $casa ? $casa->id : 1 }}",
       "icon": "menu-icon tf-icons bx bx-file",
-      "name": "Page 2",
-      "slug": "pages-page-2"
+      "name": "Menu Casa",
+      "slug": "pages-casa-show"
+    },
+
+    {
+      "url": "/nosotros/show/{{ $nosotros ? $nosotros->id : 1 }}",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Nosotros",
+      "slug": "pages-nosotros-show"
+    },
+
+    {
+      "url": "/pagcontacto/show/{{ $pagcontacto ? $pagcontacto->id : 1 }}",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Contacto",
+      "slug": "pages-pagcontacto-show"
+    },
+
+   
+
+    {
+      "url": "/foto-carrusel",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Foto Carrusel",
+      "slug": "pages-foto-carrusel"
+    },
+
+    {
+      "url": "/piezas",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Piezas",
+      "slug": "pages-piezas"
+    },
+
+    {
+      "url": "/materiales",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Materiales",
+      "slug": "pages-materiales"
+    },
+
+    {
+      "url": "/productos",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Productos",
+      "slug": "pages-productos"
+    },
+
+
+    {
+      "url": "/carruselitem",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Carrusel Item",
+      "slug": "pages-carruselitem"
+    },
+
+    {
+      "url": "/contactos",
+      "icon": "menu-icon tf-icons bx bx-file",
+      "name": "Menu Redes",
+      "slug": "pages-contactos"
     }
+    
+
   ]
 }
