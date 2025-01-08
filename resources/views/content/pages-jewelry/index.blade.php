@@ -88,8 +88,8 @@
 
     <section class="container-fluid text-center">
       <h2>Contacto</h2>
-    <div class="d-flex justify-content-around contacto-rapido">
-      <div >
+    <div class="d-flex row justify-content-around contacto-rapido">
+      <div class="col-12 col-lg-6">
         <h3>Consultas</h3>
         <form method="post" action="">
         <div >
@@ -103,7 +103,7 @@
         <button class="btn btn-primary" type="button">Button</button>
       </form>
       </div>
-      <div>
+      <div class="col-12 col-lg-6">
         <h3>Personalizado rapido</h3>
         <form method="post" action="">
         <div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebUserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ $controller_path = 'App\Http\Controllers';
 // Main Page Route
 
 // pages
+
 
 
 Route::middleware([
@@ -108,17 +110,7 @@ $controller_path = 'App\Http\Controllers';
 });
 
 
-Route::prefix('user')->name('user.')->group(function () {
-    Route::get('/login', [WebUserController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [WebUserController::class, 'login']);
-    Route::post('/logout', [WebUserController::class, 'logout'])->name('logout');
 
-    Route::get('/register', [WebUserController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [WebUserController::class, 'register']);
-    
-    Route::post('/password/email', [WebUserController::class, 'sendResetLinkEmail'])->name('password.email');
-    Route::get('/password/reset', [WebUserController::class, 'showLinkRequestForm'])->name('password.request');
-});
 
 
 Route::get('/detalle/{id}', function ($id) {
@@ -147,4 +139,10 @@ Route::get('/cuenta', function () {
     return view('content.pages-jewelry.cuenta');
 })->name('cuenta');
 
+Route::post('/validar-registro',[WebUserController::class,'register'])->name('validar-registro');
+Route::post('/inicia-sesion',[WebUserController::class,'login'])->name('inicia-sesion');
 
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/cuenta');
+})->name('logout');

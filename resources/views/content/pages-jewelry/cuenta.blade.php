@@ -5,14 +5,23 @@
 @section('content')
 <section class="container cuenta d-flex justify-content-center align-items-center">
 
+@auth
+    <div class="row">
+        <h2>Perfil de {{ Auth::user()->name }}</h2>
+        <p>Correo electrónico: {{ Auth::user()->email }}</p>
+        <a href="{{ route('logout') }}" class="btn btn-danger">Cerrar sesión</a>
+    </div>
+@endauth
+
+@guest
   <!-- Inicio de sesion  -->
-  <div class="row" id="loginForm">
+  <div class="row" id="loginForm" class="{{ Auth::check() ? 'hidden' : '' }}">
     <h2>Iniciar sesión</h2>
-    <form method="POST" action="{{ route('user.login') }}">
+    <form method="POST" action="{{route('inicia-sesion')}}">
         @csrf
         <div class="col-12 mb-3">
             <label class="form-label" for="username">Usuario</label>
-            <input type="text" name="email" class="form-control" id="username" placeholder="Correo electrónico" required />
+            <input type="text" name="name" class="form-control" id="username" placeholder="Nombre" required />
         </div>
         <div class="col-12 mb-3">
             <label class="form-label" for="passwordInput">Contraseña</label>
@@ -20,7 +29,7 @@
             <button type="button" id="togglePassword">Mostrar</button>
         </div>
         <div class="col-12 mb-3">
-            <a href="{{ route('password.request') }}" id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
+            <a href="  " id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
         </div>
         <div class="col-12 mb-3">
             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
@@ -30,12 +39,13 @@
         </div>
     </form>
 </div>
+@endguest
 
 
       <!-- Olvidar contraseña  -->
       <div id="forgotPasswordForm" class="hidden row">
     <h2>Recuperar Contraseña</h2>
-    <form method="POST" action="{{ route('user.password.email') }}">
+    <form method="POST" action=" ">
         @csrf
         <div class="col-12 mb-3">
             <label class="form-label" for="email">Correo electrónico</label>
@@ -54,7 +64,7 @@
 
       <div id="createAccountForm" class="hidden row">
     <h2>Crear Cuenta</h2>
-    <form method="POST" action="{{ route('user.register') }}">
+    <form method="POST" action="{{route('validar-registro')}}">
         @csrf
         <div class="col-12 mb-3">
             <label class="form-label" for="username">Usuario</label>
