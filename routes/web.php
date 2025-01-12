@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebUserController;
+use App\Http\Controllers\BusquedaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,7 +112,7 @@ $controller_path = 'App\Http\Controllers';
 
 
 
-
+Route::get('/buscar', [BusquedaController::class, 'buscar'])->name('buscar');
 
 Route::get('/detalle/{id}', function ($id) {
     // Cargar el producto específico junto con el detalleTexto usando el ID

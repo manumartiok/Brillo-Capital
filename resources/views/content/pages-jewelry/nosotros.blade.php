@@ -27,12 +27,23 @@
     color: white; /* Color de texto (ajusta según tu diseño) */
   }
 
+  .contenedor-summernote{
+    max-width: 1000px; /* Ancho fijo en pantallas grandes */
+    margin: 0 auto; /* Centrar el contenedor */
+  }
+
   .note-toolbar {
-    
-  
     display: block !important;
         z-index: 1001; /* Adjust as necessary */
     }
+
+    /* En pantallas más pequeñas, ocupa el 100% */
+@media (max-width: 768px) {
+    .summernote-container {
+        max-width: 100%; /* Ancho completo */
+        padding: 0 10px; /* Añadir un poco de espacio a los lados */
+    }
+}
 
 </style>
 
@@ -40,9 +51,11 @@
     <form action="{{ route('pages-nosotros-update') }}" method="POST">
     
     @csrf
+    <div class="contenedor-summernote">
     <textarea id="summernote" name="contenido">{{ $nosotro->contenido }}</textarea>
         <input type="hidden" name="nosotros_id" value="{{ $nosotro->id }}">
         <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
     </form>
 </section>
     @endforeach
@@ -54,7 +67,7 @@
 $(document).ready(function() {
     $('#summernote').summernote({
         height: 700, // Ajusta la altura según tus necesidades
-        width:1000,
+        width:'100%',
         placeholder: 'Escribe aquí...',
         tabsize: 2,
         toolbar: [

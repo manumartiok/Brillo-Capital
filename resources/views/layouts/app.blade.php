@@ -57,8 +57,8 @@
                 </ul>
               </div>
               <div class="header-right">
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <form class="d-flex" role="search" action="{{ route('buscar') }}" method="GET">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
                   <a  href="{{ route('cuenta') }}" rel="noopener noreferrer">
@@ -79,7 +79,7 @@
 
     <!-- footer  -->
 
-    <footer class="container-fluid seccion-oscura">
+    <footer class="container-fluid seccion-oscura p-3">
   <div class="row">
     <div class="col-12 col-md-6 col-lg-3 text-center">
       <h3>Redes</h3>

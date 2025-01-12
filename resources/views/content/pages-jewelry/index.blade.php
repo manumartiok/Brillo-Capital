@@ -43,9 +43,9 @@
 
     @foreach ($casas as $casa)
     <section class="productos seccion-clara">
-      <div class="container-fluid text-center">
+      <div class="container text-center">
       <h1>{{$casa->productos_titulo}}</h1>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center p-2">
             <div class="col-12 col-md-6 col-lg-4 contenedor-productos">
                 <h2>{{$casa->producto1_titulo}}</h2>
                 <img src="{{$casa->producto1_foto}}" alt="">
@@ -70,14 +70,14 @@
     
     <!-- Presentacion  -->
 
-    <section class="container-fluid presentacion seccion-oscura">
+    <section class="container-fluid presentacion seccion-oscura py-3">
       <div>
-        <div class="d-flex presentacion-jaula">
-          <img src="{{$casa->nosotros_foto1}}" alt="" style="height:300px; width:300px;">
+        <div class="d-flex presentacion-jaula ">
+          <img class="d-none d-md-block" src="{{$casa->nosotros_foto1}}" alt="" style="height:300px; width:300px;">
           <p>{{$casa->nosotros_texto1}}</p>
         </div>
         <div class="d-flex presentacion-jaula">
-          <p>{{$casa->nosotros_texto2}}</p>
+          <p class="d-none d-md-block">{{$casa->nosotros_texto2}}</p>
           <img src="{{$casa->nosotros_foto2}}" alt="" style="height:300px; width:300px;">
         </div>
       </div>
@@ -86,7 +86,7 @@
 
     <!-- Contacto rapido  -->
 
-    <section class="container-fluid text-center">
+    <section class="container text-center py-3">
       <h2>Contacto</h2>
     <div class="d-flex row justify-content-around contacto-rapido">
       <div class="col-12 col-lg-6">
@@ -98,7 +98,7 @@
           <input type="text" placeholder="Correo electronico">
         </div>
         <div>
-          <textarea class="mail-item" maxlength="200" type="text" name="" id="" cols="60" rows="3"></textarea>
+          <textarea class="mail-item" maxlength="200" type="text" name="" id="" cols="60" rows="3" style="width:100%"></textarea>
         </div>
         <button class="btn btn-primary" type="button">Button</button>
       </form>
@@ -118,7 +118,7 @@
           </select>
         </div>
         <div class="container-fluid">
-          <textarea class="mail-item" maxlength="200" type="text" name="" id="" cols="60" rows="3"></textarea>
+          <textarea class="mail-item" maxlength="200" type="text" name="" id="" cols="60" rows="3" style="width:100%"></textarea>
         </div>
         <button class="btn btn-primary" type="button">Button</button>
       </div>
