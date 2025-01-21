@@ -42,9 +42,9 @@ return [
         ],
 
         'web_user' => [
-        'driver' => 'session',
-        'provider' => 'web_users',
-    ],
+            'driver' => 'session',
+            'provider' => 'web_users',
+        ],
     ],
 
     /*
@@ -75,10 +75,6 @@ return [
             'model' => App\Models\WebUser::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

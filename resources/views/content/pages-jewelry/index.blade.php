@@ -88,7 +88,7 @@
 
     <section class="container text-center py-3">
       <h2>Contacto</h2>
-    <div class="d-flex row justify-content-around contacto-rapido">
+    <div class="d-flex row  justify-content-around contacto-rapido">
       <div class="col-12 col-lg-6">
         <h3>Consultas</h3>
         <form method="post" action="">

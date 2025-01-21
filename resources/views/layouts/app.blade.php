@@ -30,47 +30,52 @@
 <body>
     <!-- navbar  -->
     <header>
-        <nav class="navbar navbar-expand-md navbar-light">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbar-toggler"> <!--el id debe tener lo mismo que el data-bs-target del button-->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{{ route('index') }}">
                 @foreach ($casas as $casa)
-                <a class="navbar-brand" href="#">
-                    <img src="{{$casa->logo_url}}" width="50" alt="Logo de pagina">
-                </a>
+                    <img src="{{ $casa->logo_url }}" width="50" alt="Logo de página">
                 @endforeach
-                <ul class="navbar-nav d-flex justify-content-center align-items-center"> <!--clases bootstrap-->
-                <li class="nav-item">
-                      <a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}" href="{{ route('index') }}">Casa</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link {{ request()->routeIs('joyeria') ? 'active' : '' }}" href="{{ route('joyeria') }}">Joyería</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link {{ request()->routeIs('nosotros') ? 'active' : '' }}" href="{{ route('nosotros') }}">Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}" href="{{ route('contacto') }}">Contacto</a>
-                  </li>
+            </a>
+
+            <!-- Botón para menú colapsable -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Elementos de navegación -->
+            <div class="collapse navbar-collapse " id="navbar-toggler">
+                <!-- Menú -->
+                <ul class="navbar-nav me-auto d-flex align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}" href="{{ route('index') }}">Casa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('joyeria') ? 'active' : '' }}" href="{{ route('joyeria') }}">Joyería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('nosotros') ? 'active' : '' }}" href="{{ route('nosotros') }}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}" href="{{ route('contacto') }}">Contacto</a>
+                    </li>
                 </ul>
-              </div>
-              <div class="header-right">
-                  <form class="d-flex" role="search" action="{{ route('buscar') }}" method="GET">
-                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                  <a  href="{{ route('cuenta') }}" rel="noopener noreferrer">
-                    <i class="bi bi-person" style="font-size: 200%; margin-right: 20px;" ></i>
-                  </a>
-              
-              </div>
-            </div>
-          </nav>
-       <!-- Menú lateral (Carrito) -->
-   
-    </header>
+
+                <!-- Barra de búsqueda e ícono de cuenta -->
+                <div class="d-flex align-items-center">
+                    <form class="d-flex me-3" role="search" action="{{ route('buscar') }}" method="GET">
+                        <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <a href="{{ route('cuenta') }}" class="text-decoration-none">
+                        <i class="bi bi-person" style="font-size: 200%; margin-right: 10px;"></i>
+                    </a>
+                  </div>
+                </div>
+        </div>
+    </nav>
+</header>
 
     <!-- Contenido  -->
     <div class="">
@@ -132,12 +137,7 @@
      @yield('scripts')  <!-- Asegúrate de tener esta línea aquí -->
 
     <script>
-        // Al hacer clic en el icono del carrito, se despliega el menú
-        $('#carrito').click(function (event) {
-          event.preventDefault();  // Previene que el enlace abra una nueva página
-            $('#sidebarMenu').toggleClass('active');
-            $('#carrito').toggleClass('active');
-        });
+    
     </script>
 </body>
 </html>

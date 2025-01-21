@@ -143,7 +143,4 @@ Route::get('/cuenta', function () {
 Route::post('/validar-registro',[WebUserController::class,'register'])->name('validar-registro');
 Route::post('/inicia-sesion',[WebUserController::class,'login'])->name('inicia-sesion');
 
-Route::post('/logout', function () {
-    Auth::logout();
-    return redirect('/cuenta');
-})->name('logout');
+Route::post('/logout',[WebUserController::class,'logout'])->name('logout');

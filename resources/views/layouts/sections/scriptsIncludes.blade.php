@@ -1,5 +1,6 @@
 <!-- laravel style -->
 <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
+
 <!-- beautify ignore:start -->
 @if ($configData['hasCustomizer'])
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -40,6 +41,8 @@
   </script>
   @endif
 <!-- beautify ignore:end -->
+
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>

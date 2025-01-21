@@ -84,7 +84,7 @@
                             data-precio="{{$producto->precio_producto}}">
                             <div class="justify-content-center">
                                 <a href="{{ route('producto.detalle', $producto->id) }}">
-                                    <img src="{{$producto->img_producto}}" alt="" style="height:300px; width:300px;">
+                                    <img src="{{$producto->img_producto}}" alt="" class="img-fluid" style="height:300px; width:300px;">
                                 </a>
                                 <br>
                                 <a href="{{ route('producto.detalle', $producto->id) }}">{{$producto->nombre_producto}}</a>

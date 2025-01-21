@@ -17,12 +17,17 @@
   <link rel="canonical" href="{{ config('variables.productPage') ? config('variables.productPage') : '' }}">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+  <!-- summernote -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet" />
 
+ 
   <!-- Include Styles -->
   @include('layouts/sections/styles')
 
   <!-- Include Scripts for customizer, helper, analytics, config -->
   @include('layouts/sections/scriptsIncludes')
+
+  
 </head>
 
 <body>
@@ -30,10 +35,11 @@
   @yield('layoutContent')
   <!--/ Layout Content -->
 
-  
 
-  <!-- Include Scripts -->
-  @include('layouts/sections/scripts')
+<!-- Include Scripts -->
+@include('layouts/sections/scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
 
 </body>
 

@@ -18,31 +18,43 @@ class WebUserController extends Controller
 
         $user->save();
 
-        Auth::login($user);
+         // Loguear al usuario usando el guard 'web_user'
+         Auth::guard('web_user')->login($user);
 
         return redirect()->route('index');
    }
 
    public function login(Request $request){
+
+
      
      $credentials = $request->validate([
-      'name' => 'required|string',  // Usar name en lugar de email
-      'password' => 'required|string',
-  ]);
+        'name' => 'required|string',  // Usar name en lugar de email
+        'password' => 'required|string',
+    ]);
  
-  if (Auth::guard('web_user')->attempt(['name' => $request->name, 'password' => $request->password])) {
-     $user = Auth::guard('web_user')->user();
-     return redirect()->route('cuenta');
- }
- 
-     return back()->withErrors([
-      'name' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
-  ]);}
+  
+
+    if (Auth::guard('web_user')->attempt(['name' => $request->name, 'password' => $request->password])) {
+        $user = Auth::guard('web_user')->user();
+        
+        return redirect()->route('cuenta');
+    }
+  
+
+    
+
+      return back()->withErrors([
+        'name' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+      ]);
+    }
  
 
    public function logout(Request $request){
-        Auth::logout();
-
+        
+     // Cerrar sesión con el guard 'web_user'
+     Auth::guard('web_user')->logout();
+     
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

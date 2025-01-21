@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="{{ asset(mix('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')) }}" />
 <link rel="stylesheet" href="{{ asset(mix('assets/vendor/libs/typeahead-js/typeahead.css')) }}" />
 
+
 <!-- Vendor Styles -->
 @yield('vendor-style')
-
 
 <!-- Page Styles -->
 @yield('page-style')

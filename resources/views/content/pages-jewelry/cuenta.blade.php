@@ -5,19 +5,22 @@
 @section('content')
 <section class="container cuenta d-flex justify-content-center align-items-center">
 
-@auth
+@auth('web_user')
     <div class="row">
-        <h2>Perfil de {{ Auth::user()->name }}</h2>
-        <p>Correo electrónico: {{ Auth::user()->email }}</p>
-        <a href="{{ route('logout') }}" class="btn btn-danger">Cerrar sesión</a>
+        <h2>Perfil de {{ Auth::guard('web_user')->user()->name }}</h2>
+        <p>Correo electrónico: {{ Auth::guard('web_user')->user()->email }}</p>
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+        </form>
     </div>
 @endauth
 
-@guest
-  <!-- Inicio de sesion  -->
-  <div class="row" id="loginForm" class="{{ Auth::check() ? 'hidden' : '' }}">
+@guest('web_user')
+  <!-- Inicio de sesión -->
+  <div class="row" id="loginForm" class="{{ Auth::guard('web_user')->check() ? 'hidden' : '' }}">
     <h2>Iniciar sesión</h2>
-    <form method="POST" action="{{route('inicia-sesion')}}">
+    <form method="POST" action="{{ route('inicia-sesion') }}">
         @csrf
         <div class="col-12 mb-3">
             <label class="form-label" for="username">Usuario</label>
@@ -29,7 +32,7 @@
             <button type="button" id="togglePassword">Mostrar</button>
         </div>
         <div class="col-12 mb-3">
-            <a href="  " id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
+            <a href="#" id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
         </div>
         <div class="col-12 mb-3">
             <button class="btn btn-primary" type="submit">Iniciar sesión</button>
@@ -38,7 +41,7 @@
             <a href="#" id="createAccountLink">Crear una cuenta</a>
         </div>
     </form>
-</div>
+  </div>
 @endguest
 
 
