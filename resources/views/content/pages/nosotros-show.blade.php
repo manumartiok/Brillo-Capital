@@ -9,28 +9,12 @@ $configData = Helper::appClasses();
 @section('content')
 
 <style>
-  #summernote {
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-    color: white; /* Color de texto (ajusta según tu diseño) */
-  }
 
-  .contenedor-summernote{
-    max-width: 1000px; /* Ancho fijo en pantallas grandes */
-    margin: 0 auto; /* Centrar el contenedor */
-  }
-
-  .note-toolbar {
-    display: block !important;
-        z-index: 1001; /* Adjust as necessary */
-    }
+ 
 
     /* En pantallas más pequeñas, ocupa el 100% */
 @media (max-width: 768px) {
-    .summernote-container {
-        max-width: 100%; /* Ancho completo */
-        padding: 0 10px; /* Añadir un poco de espacio a los lados */
-    }
+   
 }
 
 </style>
@@ -58,10 +42,10 @@ $configData = Helper::appClasses();
               <input type="file" name="fondo_url" class="form-control" id="fondo_url"/>
             </div>
           
-            <!-- Texto Summernote -->
-            <div class="mb-3 ">
-                 <label class="form-label" for="contenido">Texto Summernote</label>
-               <textarea id="summernote" name="contenido" class="form-control " placeholder="Texto Summernote">{{ $nosotros->contenido ?? '' }}</textarea>
+            <!-- Texto TinyMCE -->
+            <div class="mb-3">
+                 <label class="form-label" for="contenido">Texto</label>
+               <textarea  name="contenido" class="form-control editor" placeholder="Texto">{{ $nosotros->contenido ?? '' }}</textarea>
             </div>
 
             <!-- Botón Guardar -->
@@ -74,30 +58,7 @@ $configData = Helper::appClasses();
 @endsection
 
 @section('scripts')
-<script>
-$(document).ready(function() {
-    $('#summernote').summernote({
-        height: 700, // Ajusta la altura según tus necesidades
-        width:'100%',
-        placeholder: 'Escribe aquí...',
-        tabsize: 2,
-        toolbar: [
-            ['style', ['bold', 'italic', 'underline']],
-            ['fontsize', ['fontsize']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['insert', ['picture', 'link']],
-            ['misc', ['undo', 'redo']]
-        ],
-        styleTags: ['h1', 'h2', 'h3', 'p'],
-        fontSizes: ['10', '12', '14', '16', '18', '20', '22', '24', '26', '28', '30', '32'],
-        callbacks: {
-            onInit: function() {
-                $('.note-editable').css('background-color', 'transparent');
-                $('.note-editable').css('color', 'white');
-            }
-        }
-    });
-});
-</script>
+
+
 @endsection
 

@@ -18,7 +18,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
   <!-- summernote -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
  
   <!-- Include Styles -->
@@ -34,12 +34,27 @@
   <!-- Layout Content -->
   @yield('layoutContent')
   <!--/ Layout Content -->
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.tiny.cloud/1/8noeqswa0qrq9xvu53p0tqe2zyfrrnke3p82kdezojs3slh6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        tinymce.init({
+            selector: 'textarea.editor', // Solo afecta a los textarea con la clase 'editor'
+            height: 300,
+            menubar: false,
+            plugins: 'advlist autolink lists link image charmap preview anchor code textcolor',
+            toolbar: 'undo redo | bold italic | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code',
+            content_style: 'body { font-family:Arial; font-size:14px; }'
+        });
+    });
+</script>
 <!-- Include Scripts -->
 @include('layouts/sections/scripts')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script>
 
 </body>
 

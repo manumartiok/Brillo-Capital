@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Joyeria;
+use App\Models\Material;
+use App\Models\Pieza;
+use App\Models\Producto;  // Importamos todos los modelos necesarios
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -13,10 +16,12 @@ class JoyeriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // En tu controlador (JoyeriaController.php)
     public function index()
     {
-        //
+        
     }
+
 
     /**
      * Show the form for creating a new resource.

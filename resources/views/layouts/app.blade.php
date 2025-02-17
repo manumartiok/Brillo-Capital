@@ -22,8 +22,10 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Summernote CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-lite.min.css" rel="stylesheet">
+   <!-- Letra Google -->
+   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+
     <!-- CSS  -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 </head>
@@ -47,7 +49,7 @@
             <!-- Elementos de navegación -->
             <div class="collapse navbar-collapse " id="navbar-toggler">
                 <!-- Menú -->
-                <ul class="navbar-nav me-auto d-flex align-items-center">
+                <ul class="navbar-nav  d-flex align-items-center">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('index') ? 'active' : '' }}" href="{{ route('index') }}">Casa</a>
                     </li>
@@ -65,11 +67,11 @@
                 <!-- Barra de búsqueda e ícono de cuenta -->
                 <div class="d-flex align-items-center">
                     <form class="d-flex me-3" role="search" action="{{ route('buscar') }}" method="GET">
-                        <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" name="query" placeholder="Buscar..." aria-label="Search">
+                        <button class="btn btn-outline-light" style="color:grey; border-color:grey;" type="submit">Buscar</button>
                     </form>
                     <a href="{{ route('cuenta') }}" class="text-decoration-none">
-                        <i class="bi bi-person" style="font-size: 200%; margin-right: 10px;"></i>
+                        <i class="bi bi-person" style="font-size: 200%"></i>
                     </a>
                   </div>
                 </div>
@@ -131,13 +133,22 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     <!-- Summernote JS -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-lite.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        tinymce.init({
+            selector: 'textarea.editor', // Solo afecta a los textarea con la clase 'editor'
+            height: 300,
+            menubar: false,
+            plugins: 'advlist autolink lists link image charmap preview anchor code',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code',
+            content_style: 'body { font-family:Arial; font-size:14px; }'
+        });
+    });
+</script>
 
      @yield('scripts')  <!-- Asegúrate de tener esta línea aquí -->
 
-    <script>
-    
-    </script>
 </body>
 </html>

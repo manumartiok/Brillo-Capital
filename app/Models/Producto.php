@@ -28,4 +28,9 @@ class Producto extends Model
     {
         return $this->hasMany(CarruselItem::class);
     }
+
+    public function favoritos() {
+        return $this->hasMany(Favorito::class, 'producto_id');
+    }
+    
 }

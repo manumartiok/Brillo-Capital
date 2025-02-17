@@ -10,7 +10,7 @@
 
 @section('content')
      <!-- carrousel  -->
-     <section>
+    <section>
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
         @foreach($fcarro as $key => $carro)
@@ -22,8 +22,8 @@
           <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
             <img src="{{ asset($carro->image_url) }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>{{$carro->texto_mayor}}</h5>
-              <p>{{$carro->texto_menor}}</p>
+              <h4>{{$carro->texto_mayor}}</h5>
+              <p class="fw-semibold">{{$carro->texto_menor}}</p>
             </div>
           </div> 
           @endforeach
@@ -44,25 +44,37 @@
     @foreach ($casas as $casa)
     <section class="productos seccion-clara">
       <div class="container text-center">
-      <h1>{{$casa->productos_titulo}}</h1>
+      <h1 class="display-4 mb-4">{{$casa->productos_titulo}}</h1>
         <div class="row justify-content-center p-2">
-            <div class="col-12 col-md-6 col-lg-4 contenedor-productos">
-                <h2>{{$casa->producto1_titulo}}</h2>
-                <img src="{{$casa->producto1_foto}}" alt="">
-                <h5>{{$casa->producto1_texto}}</h5>
-                <button class="btn btn-primary" type="button">{{$casa->producto1_link_boton}}</button>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 contenedor-productos ">
+                <div class="shadow-sm border-0 p-2 ">
+                    <h4>{{$casa->producto1_titulo}}</h2>
+                    <a href="joyeria">
+                    <img src="{{$casa->producto1_foto}}" alt="" class="mb-2">
+                    </a>
+                    <h6 class="mb-2">{{$casa->producto1_texto}}</h5>
+                    
+                </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 contenedor-productos">
-                <h2>{{$casa->producto2_titulo}}</h2>
-                <img src="{{$casa->producto2_foto}}" alt="">
-                <h5>{{$casa->producto2_texto}}</h5>
-                <button class="btn btn-primary" type="button">{{$casa->producto2_link_boton}}</button>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 contenedor-productos">
+                <div class="shadow-sm border-0 p-2">
+                    <h4>{{$casa->producto2_titulo}}</h2>
+                    <a href="joyeria">
+                    <img src="{{$casa->producto2_foto}}" alt="" class="mb-2">
+                    </a>
+                    <h6 class="mb-2">{{$casa->producto2_texto}}</h5>
+                    
+                </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 contenedor-productos">
-                <h2>{{$casa->producto3_titulo}}</h2>
-                <img src="{{$casa->producto3_foto}}" alt="">
-                <h5>{{$casa->producto3_texto}}</h5>
-                <button class="btn btn-primary" type="button">{{$casa->producto3_link_boton}}</button>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 contenedor-productos">
+                <div class="shadow-sm border-0 p-2">
+                    <h4>{{$casa->producto3_titulo}}</h2>
+                    <a href="joyeria">
+                    <img src="{{$casa->producto3_foto}}" alt="" class="mb-2">
+                    </a>
+                    <h6 class="mb-2">{{$casa->producto3_texto}}</h5>
+              
+                </div>
             </div>
         </div>
     </div>
@@ -74,55 +86,67 @@
       <div>
         <div class="d-flex presentacion-jaula ">
           <img class="d-none d-md-block" src="{{$casa->nosotros_foto1}}" alt="" style="height:300px; width:300px;">
-          <p>{{$casa->nosotros_texto1}}</p>
+          <p class="fs-5 p-3">{{$casa->nosotros_texto1}}</p>
         </div>
         <div class="d-flex presentacion-jaula">
-          <p class="d-none d-md-block">{{$casa->nosotros_texto2}}</p>
+          <p class="d-none d-md-block fs-5 p-3">{{$casa->nosotros_texto2}}</p>
           <img src="{{$casa->nosotros_foto2}}" alt="" style="height:300px; width:300px;">
         </div>
       </div>
     </section>
     @endforeach
 
-    <!-- Contacto rapido  -->
-
-    <section class="container text-center py-3">
-      <h2>Contacto</h2>
-    <div class="d-flex row  justify-content-around contacto-rapido">
-      <div class="col-12 col-lg-6">
-        <h3>Consultas</h3>
+    <!-- Contacto rápido -->
+    <section class="container text-center py-5">
+        <h2 class="display-4 mb-4">Contacto</h2>
+        <div class="d-flex row justify-content-around contacto-rapido">
+            <!-- Formulario Consultas -->
+                <div class="col-12 col-lg-6 mb-4">
+        <h3 class="h4">Consultas</h3>
         <form method="post" action="">
-        <div >
-          <input class="mail-item" type="text" placeholder="Nombre">
-          <input type="number" placeholder="Telefono">
-          <input type="text" placeholder="Correo electronico">
-        </div>
-        <div>
-          <textarea class="mail-item" maxlength="200" type="text" name="" id="" cols="60" rows="3" style="width:100%"></textarea>
-        </div>
-        <button class="btn btn-primary" type="button">Button</button>
-      </form>
-      </div>
-      <div class="col-12 col-lg-6">
-        <h3>Personalizado rapido</h3>
-        <form method="post" action="">
-        <div>
-          <input class="mail-item" type="text" placeholder="Nombre">
-          <input class="mail-item" type="number" placeholder="Telefono">
-          <input class="mail-item" type="text" placeholder="Correo electronico">
-          <select class="mail-item" name="" id="" >
-            <option value="" disabled selected>Tipo de pieza</option>
-            @foreach ($piezas as $pieza)
-              <option value="{{$pieza->id}}">{{$pieza->tipo_pieza}}</option>
-              @endforeach
-          </select>
-        </div>
-        <div class="container-fluid">
-          <textarea class="mail-item" maxlength="200" type="text" name="" id="" cols="60" rows="3" style="width:100%"></textarea>
-        </div>
-        <button class="btn btn-primary" type="button">Button</button>
-      </div>
-    </form>
+            <div class="mb-3">
+                <input class="form-control" type="text" placeholder="Nombre" required>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="number" placeholder="Teléfono" required>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" maxlength="200" cols="60" rows="3" placeholder="Mensaje" style="width:100%" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
     </div>
+
+            <!-- Formulario Personalizado rápido -->
+            <div class="col-12 col-lg-6 mb-4">
+                <h3 class="h4">Personalizado rápido</h3>
+                <form method="post" action="">
+        <div class="mb-3">
+            <input class="form-control" type="text" placeholder="Nombre" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="number" placeholder="Teléfono" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="mb-3">
+            <select class="form-control" name="" id="" required>
+                <option value="" disabled selected>Tipo de pieza</option>
+                @foreach ($piezas as $pieza)
+                    <option value="{{ $pieza->id }}">{{ $pieza->tipo_pieza }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" maxlength="200" cols="60" rows="3" placeholder="Mensaje" style="width:100%" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+            </div>
+        </div>
     </section>
 @endsection

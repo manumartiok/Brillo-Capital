@@ -58,4 +58,9 @@ class WebUser extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function favoritos() {
+        return $this->hasMany(Favorito::class, 'web_user_id');
+    }
+    
 }

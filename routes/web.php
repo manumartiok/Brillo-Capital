@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebUserController;
 use App\Http\Controllers\BusquedaController;
+use App\Http\Controllers\FavoritoController;
+use App\Http\Controllers\MiCuentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -144,3 +146,8 @@ Route::post('/validar-registro',[WebUserController::class,'register'])->name('va
 Route::post('/inicia-sesion',[WebUserController::class,'login'])->name('inicia-sesion');
 
 Route::post('/logout',[WebUserController::class,'logout'])->name('logout');
+
+Route::get('/favoritos/toggle/{producto_id}', [FavoritoController::class, 'toggle'])->name('favoritos.toggle');
+Route::get('/mi-cuenta/favoritos', [MiCuentaController::class, 'favoritos'])->name('mi-cuenta.favoritos')->middleware('redirect.if.not.authenticated.as.web.user');
+
+

@@ -1,20 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .container {
+      min-height: 700px;
+    }
+</style>
 <div class="container">
-    <h2>Resultados de búsqueda para: "{{ $query }}"</h2>
+    <h2 class="text-center mb-4">Resultados de búsqueda para: "{{ $query }}"</h2>
+
     @if($resultados->isEmpty())
-        <p>No se encontraron resultados.</p>
+        <div class="alert alert-warning text-center">No se encontraron resultados.</div>
     @else
-        <ul class="list-group">
+        <div class="row">
             @foreach($resultados as $resultado)
-                <li class="list-group-item">
-                    <a href="{{ route('producto.detalle', $resultado->id) }}">
-                    <img src="{{$resultado->img_producto }}" alt="{{ $resultado->nombre_producto }}" style="width:300px; height:300px;">
-                    </a>
-                </li>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <a href="{{ route('producto.detalle', $resultado->id) }}" class="text-decoration-none">
+                            <img src="{{ $resultado->img_producto }}" class="card-img-top rounded" alt="{{ $resultado->nombre_producto }}" style="height: 300px; object-fit: cover;">
+                        </a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ $resultado->nombre_producto }}</h5>
+                            <a href="{{ route('producto.detalle', $resultado->id) }}" class="btn btn-primary mt-2">Ver Detalle</a>
+                        </div>
+                    </div>
+                </div>
             @endforeach
-        </ul>
+        </div>
     @endif
 </div>
 @endsection

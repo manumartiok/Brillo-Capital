@@ -1,7 +1,7 @@
 @php
     $materiales = App\Models\Material::all();
     $piezas = App\Models\Pieza::all();
-    $productos = App\Models\Producto::with('pieza', 'material')->get();
+    $productos = App\Models\Producto::with('pieza', 'material')->paginate(9);
 @endphp
 
 @extends('layouts.app')
@@ -9,6 +9,58 @@
 @section('title', 'Joyeria')
 
 @section('content')
+<style>
+    .letra{
+        font-family: "EB Garamond", serif;
+    }
+
+    .favorito-toggle i {
+    font-size: 1.2rem;  /* Ajusta el tamaño de la estrella */
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.3s ease;
+}
+
+    /* Efecto de hover: cuando el mouse pasa sobre la estrella */
+    .favorito-toggle:hover i {
+        color: gold; /* Cambia el color a dorado al hacer hover */
+        transform: scale(1.2); /* Aumenta ligeramente el tamaño */
+}
+
+    /* Estilo cuando la estrella está marcada (clickeada) */
+    .favorito-toggle.active i {
+        color: gold; /* Rellenar la estrella con dorado */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a, .pagination span {
+    padding: 4px 12px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.pagination a:hover {
+    background-color: #f1f1f1;
+}
+.pagination .active span {
+    background-color: #f1f1f1;
+    color: black;
+    border-color:grey;
+}
+
+</style>
     <!-- joyas -->
     <section id="joyas">
         <div class="container">
@@ -69,7 +121,7 @@
                             </ul>
                         </nav>
                         <div class="d-flex justify-content-end" style="margin-bottom: 10px;">
-                            <select name="" id="ordenar-precio">
+                            <select class="form-control w-auto" name="" id="ordenar-precio">
                                 <option value="" disabled selected>Ordenar por:</option>
                                 <option value="mayor">Mayor a menor</option>
                                 <option value="menor">Menor a mayor</option>
@@ -87,11 +139,28 @@
                                     <img src="{{$producto->img_producto}}" alt="" class="img-fluid" style="height:300px; width:300px;">
                                 </a>
                                 <br>
-                                <a href="{{ route('producto.detalle', $producto->id) }}">{{$producto->nombre_producto}}</a>
-                                <p>${{$producto->precio_producto}}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a class="letra fw-semibold fs-5 text-dark" href="{{ route('producto.detalle', $producto->id) }}">
+                                        {{$producto->nombre_producto}}
+                                    </a>
+                                    <a href="{{ route('favoritos.toggle', $producto->id) }}" class="btn btn-sm favorito-toggle" data-id="{{ $producto->id }}">
+                                        @if(Auth::guard('web_user')->check())
+                                            <i class="{{ Auth::guard('web_user')->user()->favoritos->contains('producto_id', $producto->id) ? 'bi bi-star-fill' : 'bi bi-star' }}"></i>
+                                        @else
+                                            <i class="bi bi-star"></i> <!-- Icono predeterminado si no está autenticado -->
+                                        @endif
+                                    </a>
+                                </div>
+                                <p class="letra fw-semibold fs-6 text-body-secundary">${{$producto->precio_producto}}</p>
+                                
                             </div>
                         </div>
                         @endforeach
+                        
+                        <!-- Paginación -->
+                        <div class="d-flex justify-content-center m-4" >
+                            {{ $productos->links('pagination::bootstrap-4') }}
+                        </div>
                     </div>
                 </div>
             </div>
