@@ -29,9 +29,9 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- navbar  -->
-    <header>
+    <header >
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container-fluid">
             <!-- Logo -->
@@ -65,7 +65,7 @@
                 </ul>
 
                 <!-- Barra de búsqueda e ícono de cuenta -->
-                <div class="d-flex align-items-center">
+                <div class="d-flex justify-content-around align-items-center">
                     <form class="d-flex me-3" role="search" action="{{ route('buscar') }}" method="GET">
                         <input class="form-control me-2" type="search" name="query" placeholder="Buscar..." aria-label="Search">
                         <button class="btn btn-outline-light" style="color:grey; border-color:grey;" type="submit">Buscar</button>
@@ -80,19 +80,19 @@
 </header>
 
     <!-- Contenido  -->
-    <div class="">
+    <div class="flex-fill">
         @yield('content')
     </div>
 
     <!-- footer  -->
 
-    <footer class="container-fluid seccion-oscura p-3">
+    <footer class="container-fluid seccion-oscura p-5">
   <div class="row">
     <div class="col-12 col-md-6 col-lg-3 text-center">
       <h3>Redes</h3>
       <div class="d-flex justify-content-center">
         @foreach($redes as $red)
-        <a href="{{$red->redsocial_link}}" class="mx-2">
+        <a href="{{$red->redsocial_link}}" class="mx-2 p-4">
           <i class="{{$red->redsocial_icono}}"></i>
         </a>
         @endforeach
@@ -101,25 +101,25 @@
     <div class="col-12 col-md-6 col-lg-3">
       <ul>
         <h3>Nosotros</h3>
-        <li><a href="">Política de privacidad</a></li>
-        <li><a href="">Términos y condiciones</a></li>
-        <li><a href="">Política de envío</a></li>
+        <li><a href="https://www.google.com.ar/">Política de privacidad</a></li>
+        <li><a href="https://www.google.com.ar/">Términos y condiciones</a></li>
+        <li><a href="https://www.google.com.ar/">Política de envío</a></li>
       </ul>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
       <ul>
         <h3>Ayuda</h3>
-        <li><a href="">Mis pedidos</a></li>
-        <li><a href="">Cuidado del producto</a></li>
-        <li><a href="">Garantía</a></li>
-        <li><a href="">Preguntas frecuentes</a></li>
+        <li><a href="https://www.google.com.ar/">Mis pedidos</a></li>
+        <li><a href="https://www.google.com.ar/">Cuidado del producto</a></li>
+        <li><a href="https://www.google.com.ar/">Garantía</a></li>
+        <li><a href="https://www.google.com.ar/">Preguntas frecuentes</a></li>
       </ul>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
       <ul>
         <h3>Atención al cliente</h3>
         @foreach($pagcontactos as $pagcontacto)
-        <li><a href="tel:{{$pagcontacto->telefono}}">{{$pagcontacto->telefono}}</a></li>
+        <li><a href="https://wa.me/{{$pagcontacto->telefono}}">{{$pagcontacto->telefono}}</a></li>
         <li><a href="mailto:{{$pagcontacto->mail}}">{{$pagcontacto->mail}}</a></li>
         <li><a href="{{$pagcontacto->iframe}}">{{$pagcontacto->direccion}}</a></li>
         @endforeach
@@ -137,14 +137,17 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        tinymce.init({
-            selector: 'textarea.editor', // Solo afecta a los textarea con la clase 'editor'
-            height: 300,
-            menubar: false,
-            plugins: 'advlist autolink lists link image charmap preview anchor code',
-            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code',
-            content_style: 'body { font-family:Arial; font-size:14px; }'
-        });
+          tinymce.init({
+        selector: 'textarea.editor',
+        width: '100%', // O usa un valor más alto si necesitas un tamaño fijo, por ejemplo, '800px'
+        height: 300,
+        menubar: false,
+        plugins: 'advlist autolink lists link image charmap preview anchor code fontselect fontsizeselect',
+        toolbar: 'undo redo | bold italic | fontselect fontsizeselect | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code',
+        fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+        content_style: 'body { font-family:Arial; font-size:14px; }'
+    });
+
     });
 </script>
 

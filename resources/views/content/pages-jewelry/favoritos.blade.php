@@ -2,16 +2,12 @@
 
 @section('content')
 @auth('web_user')
-<style>
-    .favorito{
-        min-height: 700px;
-    }
-</style>
-<div class="favorito">
-    <h2 class="my-4 text-center">Mis Favoritos</h2>
+
+<div class="container-fluid">
+    <h2 class="text-center">Mis Favoritos</h2>
     <div class="row">
         @foreach ($favoritos as $favorito)
-            <div class="col-md-4 mb-4 p-3">
+            <div class="col-md-4 p-3">
                 <div class="card shadow-sm border-light rounded">
                     <!-- Enlace para redirigir al detalle de la pieza -->
                     <a href="{{ route('producto.detalle', $favorito->producto->id) }}" class="text-decoration-none">

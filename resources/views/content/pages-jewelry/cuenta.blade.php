@@ -13,7 +13,7 @@
     @endif
 
     @auth('web_user')
-    <div class="row">
+    <div class="row m-0 g-0">
         <h2>Perfil de {{ Auth::guard('web_user')->user()->name }}</h2>
         <p>Correo electrónico: {{ Auth::guard('web_user')->user()->email }}</p>
         <a href="{{ route('mi-cuenta.favoritos') }}" class="btn btn-outline-warning mb-3">Mis Favoritos</a>
@@ -53,7 +53,7 @@
     @endguest
 
     <!-- Olvidar contraseña -->
-    <div id="forgotPasswordForm" class="hidden row">
+    <div id="forgotPasswordForm" class="hidden row m-0">
         <h2>Recuperar Contraseña</h2>
         <form method="POST" action=" ">
             @csrf

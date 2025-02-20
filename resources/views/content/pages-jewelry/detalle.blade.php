@@ -42,26 +42,28 @@
                 <p class="text-muted">{{ $producto->descripcion }}</p>
                 
                 <!-- Selección de talle según tipo de pieza -->
-                <div class="mb-3">
-                    <label for="producto-talle" class="form-label fw-semibold">Seleccionar talle</label>
-                    <select id="producto-talle" class="form-select" required>
-                        <option value="" disabled selected>Seleccionar talle</option>
+                @if (in_array($producto->pieza->tipo_pieza, ['Anillo', 'Cadena', 'Pulsera']))
+                    <div class="mb-3">
+                        <label for="producto-talle" class="form-label fw-semibold">Seleccionar talle</label>
+                        <select id="producto-talle" class="form-select" required>
+                            <option value="" disabled selected>Seleccionar talle</option>
 
-                        @if ($producto->pieza->tipo_pieza == 'Anillo')
-                        @for ($i = 8; $i <= 32; $i++)
-                            <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
-                        @elseif ($producto->pieza->tipo_pieza == 'Cadena')
-                        @for ($i = 40; $i <= 60; $i += 5)
-                            <option value="{{ $i }}">{{ $i }}cm</option>
-                        @endfor
-                        @elseif ($producto->pieza->tipo_pieza == 'Pulsera')
-                        @for ($i = 18; $i <= 24; $i++)
-                            <option value="{{ $i }}">{{ $i }}cm</option>
-                        @endfor
-                        @endif
-                    </select>
-                </div>
+                            @if ($producto->pieza->tipo_pieza == 'Anillo')
+                            @for ($i = 8; $i <= 32; $i++)
+                                <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
+                            @elseif ($producto->pieza->tipo_pieza == 'Cadena')
+                            @for ($i = 40; $i <= 60; $i += 5)
+                                <option value="{{ $i }}">{{ $i }}cm</option>
+                            @endfor
+                            @elseif ($producto->pieza->tipo_pieza == 'Pulsera')
+                            @for ($i = 18; $i <= 24; $i++)
+                                <option value="{{ $i }}">{{ $i }}cm</option>
+                            @endfor
+                            @endif
+                        </select>
+                    </div>
+                @endif
                 
                 <!-- Botón de consulta -->
                 <button type="button" class="btn btn-success w-100" id="consultarBtn">Consultar por WhatsApp</button>
@@ -79,8 +81,9 @@
 
     const tipoPiezaElement = document.querySelector('span.d-block.fw-bold.text-secondary');
     const precioProductoElement = document.getElementById('producto-precio');
-    const talleProducto = document.getElementById('producto-talle').value;
-
+    const talleProductoElement = document.getElementById('producto-talle');
+    const nombreProductoElement = document.querySelector('h2.mt-2');  // Obtener el nombre del producto
+    
     if (!tipoPiezaElement || !precioProductoElement) {
         console.error("No se encontraron los elementos en el DOM");
         return;
@@ -88,14 +91,27 @@
 
     const tipoPieza = tipoPiezaElement.innerText;
     const precioProducto = precioProductoElement.innerText;
+    const nombreProducto = nombreProductoElement.innerText;  // Obtener el nombre del producto
 
-    if (!talleProducto) {
+    // Verifica si el producto tiene un selector de talle
+    let talleProducto = '';
+    if (talleProductoElement) {
+        talleProducto = talleProductoElement.value;
+    }
+
+    // Si el producto tiene talle y no está seleccionado, muestra el alerta
+    if (talleProductoElement && !talleProducto) {
         alert('Por favor, selecciona un talle.');
         return;
     }
 
     // Crear el mensaje
-    const mensaje = `Hola, estoy interesado en el producto: ${tipoPieza}.\nPrecio: $${precioProducto}.\nTalle: ${talleProducto}`;
+    let mensaje = `Hola, estoy interesado en el producto:${nombreProducto} (${tipoPieza}).\nPrecio: $${precioProducto}.`;
+    
+    // Si hay talle, lo agrega al mensaje
+    if (talleProducto) {
+        mensaje += `\nTalle: ${talleProducto}`;
+    }
 
     // Codificar el mensaje para URL
     const mensajeCodificado = encodeURIComponent(mensaje);
@@ -114,6 +130,7 @@
     enlace.target = '_blank';
     enlace.click();
 });
+
 
 </script>
 @endsection

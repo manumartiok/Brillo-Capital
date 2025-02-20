@@ -60,9 +60,21 @@
     border-color:grey;
 }
 
+.categoria:hover {
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.material:hover {
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 </style>
     <!-- joyas -->
-    <section id="joyas">
+    <section id="joyas" class="p-3">
         <div class="container">
             <div class="row">
             <div class="col-12 col-md-4 col-lg-3">
@@ -128,8 +140,13 @@
                             </select>
                         </div>
                     </div>
+                     <!-- Paginación -->
+                     <div class="d-flex justify-content-center p-4" >
+                            {{ $productos->links('pagination::bootstrap-4') }}
+                        </div>
                     <div class="row" id="productos-container">
                         @foreach($productos as $producto)
+                        @if($producto->active)  <!-- Verifica si el producto está activo -->
                         <div class="col-12 col-sm-6 col-lg-4 producto" 
                             data-pieza="{{$producto->pieza->tipo_pieza}}" 
                             data-material="{{$producto->material->tipo_material}}"
@@ -151,16 +168,11 @@
                                         @endif
                                     </a>
                                 </div>
-                                <p class="letra fw-semibold fs-6 text-body-secundary">${{$producto->precio_producto}}</p>
-                                
+                                <p class="letra fw-semibold fs-6 text-body-secundary">${{number_format($producto->precio_producto, 0, ',', '.') }}</p>
                             </div>
                         </div>
+                        @endif
                         @endforeach
-                        
-                        <!-- Paginación -->
-                        <div class="d-flex justify-content-center m-4" >
-                            {{ $productos->links('pagination::bootstrap-4') }}
-                        </div>
                     </div>
                 </div>
             </div>

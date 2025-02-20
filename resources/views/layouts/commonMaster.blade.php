@@ -17,8 +17,7 @@
   <link rel="canonical" href="{{ config('variables.productPage') ? config('variables.productPage') : '' }}">
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
-  <!-- summernote -->
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
 
  
   <!-- Include Styles -->
@@ -41,16 +40,20 @@
 
 
 
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        tinymce.init({
-            selector: 'textarea.editor', // Solo afecta a los textarea con la clase 'editor'
-            height: 300,
-            menubar: false,
-            plugins: 'advlist autolink lists link image charmap preview anchor code textcolor',
-            toolbar: 'undo redo | bold italic | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code',
-            content_style: 'body { font-family:Arial; font-size:14px; }'
-        });
+            tinymce.init({
+        selector: 'textarea.editor',
+        width: '100%',
+        height: 300,
+        menubar: false,
+        plugins: 'advlist autolink lists link image charmap preview anchor code fontselect fontsize blocks', // Usa los nuevos nombres de los plugins
+        toolbar: 'undo redo | bold italic | fontfamily fontsize forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code', // Actualiza la toolbar
+        fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+        toolbar_mode: 'sliding',
+        content_style: 'body { font-family:Arial; font-size:14px; }'
+      });
     });
 </script>
 <!-- Include Scripts -->
