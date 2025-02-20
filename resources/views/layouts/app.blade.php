@@ -14,7 +14,9 @@
     <meta name="keywords" content="Palabras claves">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Foto de la pagina  -->
-    <link rel="icon" type="image/x-icon" href="fotos/anillo.jpeg">
+    @foreach ($casas as $casa)
+    <link rel="icon" type="image/x-icon" href="{{ $casa->logo_url }}">
+    @endforeach
     <!-- Titulo -->
     <title>@yield('title')</title>
     <!-- Cargar jQuery primero -->
