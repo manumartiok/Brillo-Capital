@@ -1,6 +1,0 @@
-[build]
-dockerfile = "docker/8.1/Dockerfile"
-context = "."
-
-[deploy]
-  docker = true
