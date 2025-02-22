@@ -1,7 +1,7 @@
 @php
     $materiales = App\Models\Material::all();
     $piezas = App\Models\Pieza::all();
-    $productos = App\Models\Producto::with('pieza', 'material')->paginate(9);
+    $productos = App\Models\Producto::with('pieza', 'material')->get();
 @endphp
 
 @extends('layouts.app')
@@ -31,35 +31,6 @@
         color: gold; /* Rellenar la estrella con dorado */
 }
 
-.pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-.pagination li {
-    margin: 0 5px;
-}
-
-.pagination a, .pagination span {
-    padding: 4px 12px;
-    text-decoration: none;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #333;
-    transition: background-color 0.2s;
-}
-
-.pagination a:hover {
-    background-color: #f1f1f1;
-}
-.pagination .active span {
-    background-color: #f1f1f1;
-    color: black;
-    border-color:grey;
-}
-
 .categoria:hover {
     padding: 2px 6px;
     border: 1px solid #ccc;
@@ -72,10 +43,12 @@
     border-radius: 5px;
 }
 
+
+
 </style>
     <!-- joyas -->
-    <section id="joyas" class="p-3">
-        <div class="container">
+    <section id="joyas">
+        <div class="container py-3">
             <div class="row">
             <div class="col-12 col-md-4 col-lg-3">
     <h6 class="d-none d-md-block">Categorías</h6>
@@ -140,13 +113,8 @@
                             </select>
                         </div>
                     </div>
-                     <!-- Paginación -->
-                     <div class="d-flex justify-content-center p-4" >
-                            {{ $productos->links('pagination::bootstrap-4') }}
-                        </div>
                     <div class="row" id="productos-container">
                         @foreach($productos as $producto)
-                        @if($producto->active)  <!-- Verifica si el producto está activo -->
                         <div class="col-12 col-sm-6 col-lg-4 producto" 
                             data-pieza="{{$producto->pieza->tipo_pieza}}" 
                             data-material="{{$producto->material->tipo_material}}"
@@ -168,11 +136,13 @@
                                         @endif
                                     </a>
                                 </div>
-                                <p class="letra fw-semibold fs-6 text-body-secundary">${{number_format($producto->precio_producto, 0, ',', '.') }}</p>
+                                <p class="letra fw-semibold fs-6 text-body-secundary">${{$producto->precio_producto}}</p>
+                                
                             </div>
                         </div>
-                        @endif
                         @endforeach
+                        
+                    
                     </div>
                 </div>
             </div>
