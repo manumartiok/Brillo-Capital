@@ -1,9 +1,8 @@
-# For more information: https://laravel.com/docs/sail
 version: '3'
 services:
     laravel.test:
         build:
-            context: ./docker/8.1
+            context: .  # Cambié aquí para que apunte a la raíz del proyecto
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
