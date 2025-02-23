@@ -1,5 +1,5 @@
 # Usamos una imagen base con PHP 8.1
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 # Instalamos dependencias necesarias
 RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git && \
