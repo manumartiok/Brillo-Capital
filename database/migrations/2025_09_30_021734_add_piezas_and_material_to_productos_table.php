@@ -18,7 +18,7 @@ return new class extends Migration
         $table->foreign('piezas_id')->references('id')->on('piezas')->onDelete('set null');
         
         $table->unsignedBigInteger('material_id')->nullable(); // Permitir nulos
-        $table->foreign('material_id')->references('id')->on('material')->onDelete('set null');
+        $table->foreign('materials_id')->references('id')->on('material')->onDelete('set null');
         });
     }
 
