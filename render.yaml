@@ -11,5 +11,17 @@ services:
         generateValue: true
       - key: APP_DEBUG
         value: false
-      - key: LOG_CHANNEL
-        value: stderr
+      - key: APP_URL
+        value: https://brillo-capital.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql  # Cambiado a PostgreSQL
+      - key: DB_HOST
+        value: db-hostname.render.com  # El valor proporcionado por Render
+      - key: DB_PORT
+        value: 5432  # Puerto típico para PostgreSQL
+      - key: DB_DATABASE
+        value: brillo_capital
+      - key: db_user
+        value: render_user  # El nombre de usuario proporcionado por Render
+      - key: DB_PASSWORD
+        value: CtVHszHYcozeRxK33LkupYywhtAw0Zuo  # La contraseña proporcionada por Render
