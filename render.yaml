@@ -25,3 +25,4 @@ services:
         value: render_user  # El nombre de usuario proporcionado por Render
       - key: DB_PASSWORD
         value: CtVHszHYcozeRxK33LkupYywhtAw0Zuo  # La contraseña proporcionada por Render
+ 
