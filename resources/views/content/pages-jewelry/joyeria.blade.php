@@ -10,9 +10,7 @@
 
 @section('content')
 <style>
-    .letra{
-        font-family: "EB Garamond", serif;
-    }
+    
 
     .favorito-toggle i {
     font-size: 1.2rem;  /* Ajusta el tamaño de la estrella */
