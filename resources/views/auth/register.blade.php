@@ -32,14 +32,7 @@ $customizerHidden = 'customizer-hide';
     <!-- Register Card -->
     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
-        <!-- Logo -->
-        <div class="app-brand mb-4">
-          <a href="{{url('/')}}" class="app-brand-link gap-2 mb-2">
-            <span class="app-brand-logo demo">@include('_partials.macros')</span>
-            <span class="app-brand-text demo h3 mb-0 fw-bold">{{config('variables.templateName')}}</span>
-          </a>
-        </div>
-        <!-- /Logo -->
+       
 
         <!-- Register Card -->
         <h4 class="mb-2">Adventure starts here 🚀</h4>

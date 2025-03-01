@@ -18,7 +18,7 @@ $customizerHidden = 'customizer-hide';
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center">
       <div class="flex-row text-center mx-auto">
-        <img src="{{asset('assets/img/pages/forgot-password-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/forgot-password-light.png" data-app-dark-img="pages/forgot-password-dark.png">
+       
         <div class="mx-auto">
           <h3>No worries, we will send you instructions 👩🏻‍💻</h3>
           <p>
@@ -31,14 +31,7 @@ $customizerHidden = 'customizer-hide';
     <!-- Forgot Password -->
     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
-        <!-- Logo -->
-        <div class="app-brand justify-content-center mb-4">
-          <a href="{{url('/')}}" class="app-brand-link gap-2 mb-2">
-            <span class="app-brand-logo demo">@include('_partials.macros')</span>
-            <span class="app-brand-text demo h3 mb-0 fw-bold">{{config('variables.templateName')}}</span>
-          </a>
-        </div>
-        <!-- /Logo -->
+       
         <h4 class="mb-2">Forgot Password? 🔒</h4>
         <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
 
