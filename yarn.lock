@@ -1933,10 +1933,9 @@ bootstrap-maxlength@~1.10.0:
     jquery "^3.5.1"
     qunit "^2.10.0"
 
-bootstrap-select@^1.14.0-beta2:
+"bootstrap-select@github:snapappointments/bootstrap-select#main":
   version "1.14.0-beta3"
-  resolved "https://registry.yarnpkg.com/bootstrap-select/-/bootstrap-select-1.14.0-beta3.tgz#dc15083fe51d0ac7b38a3b99dfd492dcc0a783b0"
-  integrity sha512-wYUDY4NAYBcNydXybE7wh3+ucyf+AcUOhZ+e0TFIoZ38A+k/3BVT1RPl5f0CiPxAexP1IQuqALKMqI8wtZS71A==
+  resolved "https://codeload.github.com/snapappointments/bootstrap-select/tar.gz/939e94b14a34759e193f616b753e0a33081cc0c5"
 
 bootstrap@^4.4.1:
   version "4.6.2"
@@ -3251,9 +3250,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.149:
-  version "1.5.153"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.153.tgz#edf1e4d2c00bb88bc642ac01dec2b836d4cfedfe"
-  integrity sha512-4bwluTFwjXZ0/ei1qDpHDGzVveuBfx4wiZ9VQ8j/30+T2JxSF2TfZ00d1X+wNMeDyUdZXgLkJFbarJdAMtd+/w==
+  version "1.5.154"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.154.tgz#82430d66848efef703a3b643fb2a682bd08ae26b"
+  integrity sha512-G4VCFAyKbp1QJ+sWdXYIRYsPGvlV5sDACfCmoMFog3rjm1syLhI41WXm/swZypwCIWIm4IFLWzHY14joWMQ5Fw==
 
 elliptic@^6.5.3, elliptic@^6.5.5:
   version "6.6.1"
@@ -6283,7 +6282,7 @@ sass-loader@12.1.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass@^1.32.0:
+sass@^1.49.8:
   version "1.88.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.88.0.tgz#cd1495749bebd9e4aca86e93ee60b3904a107789"
   integrity sha512-sF6TWQqjFvr4JILXzG4ucGOLELkESHL+I5QJhh7CNaE+Yge0SI+ehCatsXhJ7ymU1hAFcIS3/PBpjdIbXoyVbg==
