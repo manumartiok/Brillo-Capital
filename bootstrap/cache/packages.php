@@ -8,13 +8,13 @@
   ),
   'jenssegers/agent' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
-    ),
     'aliases' => 
     array (
       'Agent' => 'Jenssegers\\Agent\\Facades\\Agent',
+    ),
+    'providers' => 
+    array (
+      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
     ),
   ),
   'laravel/fortify' => 
@@ -54,13 +54,13 @@
   ),
   'livewire/livewire' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Livewire\\LivewireServiceProvider',
-    ),
     'aliases' => 
     array (
       'Livewire' => 'Livewire\\Livewire',
+    ),
+    'providers' => 
+    array (
+      0 => 'Livewire\\LivewireServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -79,13 +79,13 @@
   ),
   'nunomaduro/laravel-desktop-notifier' => 
   array (
-    'providers' => 
-    array (
-      0 => 'NunoMaduro\\LaravelDesktopNotifier\\LaravelDesktopNotifierServiceProvider',
-    ),
     'aliases' => 
     array (
       'Notifier' => 'NunoMaduro\\LaravelDesktopNotifier\\Facaces\\Notifier',
+    ),
+    'providers' => 
+    array (
+      0 => 'NunoMaduro\\LaravelDesktopNotifier\\LaravelDesktopNotifierServiceProvider',
     ),
   ),
   'nunomaduro/termwind' => 
@@ -104,24 +104,24 @@
   ),
   'pixinvent/frest-html-laravel-jetstream' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Pixinvent\\Jetstrap\\JetstrapServiceProvider',
-    ),
     'aliases' => 
     array (
       'Jetstrap' => 'Pixinvent\\Jetstrap\\JetstrapFacade',
     ),
+    'providers' => 
+    array (
+      0 => 'Pixinvent\\Jetstrap\\JetstrapServiceProvider',
+    ),
   ),
   'spatie/laravel-ignition' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
-    ),
     'aliases' => 
     array (
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
+    ),
+    'providers' => 
+    array (
+      0 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     ),
   ),
 );
