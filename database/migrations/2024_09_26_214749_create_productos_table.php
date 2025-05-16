@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('precio_producto')->nullable(); // Permitir nulos
             $table->boolean('active')->default(true);
             $table->timestamps();
+            $table->text('descripcion')->nullable(); // Permitir nulos
         });
     }
 
