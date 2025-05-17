@@ -42,7 +42,7 @@ $configData = Helper::appClasses();
               <input type="file" name="fondo_url" class="form-control" id="fondo_url"/>
             </div>
           
-            <!-- Texto TinyMCE -->
+            <!-- Texto TinyMCEe -->
             <div class="mb-3">
                  <label class="form-label" for="contenido">Texto</label>
                <textarea  name="contenido" class="form-control editor" placeholder="Texto">{{ $nosotros->contenido ?? '' }}</textarea>
