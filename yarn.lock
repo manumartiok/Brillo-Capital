@@ -1238,18 +1238,18 @@
     "@types/send" "*"
 
 "@types/express@*":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-5.0.1.tgz#138d741c6e5db8cc273bec5285cd6e9d0779fc9f"
-  integrity sha512-UZUw8vjpWFXuDnjFTh7/5c2TWDlQqeXHi6hcN7F2XSVT5P+WmUnnbFS3KA6Jnc6IsEqI2qCVu2bK0R0J4A8ZQQ==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-5.0.2.tgz#7be9e337a5745d6b43ef5b0c352dad94a7f0c256"
+  integrity sha512-BtjL3ZwbCQriyb0DGw+Rt12qAXPiBTPs815lsUvtt1Grk0vLRMZNMUZ741d5rjk+UQOxfDiBZ3dxpX00vSkK3g==
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "^5.0.0"
     "@types/serve-static" "*"
 
 "@types/express@^4.17.13":
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.21.tgz#c26d4a151e60efe0084b23dc3369ebc631ed192d"
-  integrity sha512-ejlPM315qwLpaQlQDTjPdsUFSc6ZsP4AN6AlWnogPjQ7CVi7PYF3YVz+CY3jE2pwYf7E/7HlDAN0rV2GxTG0HQ==
+  version "4.17.22"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.22.tgz#14cfcf120f7eb56ebb8ca77b7fa9a14d21de7c96"
+  integrity sha512-eZUmSnhRX9YRSkplpz0N+k6NljUUn5l3EWZIKZvYzhvMphEuNiyyy1viH/ejgt66JWgALwC/gtSUAeQKtSwW/w==
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "^4.17.33"
@@ -1347,9 +1347,9 @@
   integrity sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==
 
 "@types/qs@*":
-  version "6.9.18"
-  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.18.tgz#877292caa91f7c1b213032b34626505b746624c2"
-  integrity sha512-kK7dgTYDyGqS+e2Q4aK9X3D7q234CIZ1Bv0q/7Z5IwRDoADNU81xXJK/YVyLbLTZCoIwUoDoffFeF+p/eIklAA==
+  version "6.14.0"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.14.0.tgz#d8b60cecf62f2db0fb68e5e006077b9178b85de5"
+  integrity sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==
 
 "@types/range-parser@*":
   version "1.2.7"
@@ -1582,7 +1582,7 @@ accepts@~1.3.4, accepts@~1.3.8:
     mime-types "~2.1.34"
     negotiator "0.6.3"
 
-acorn@^8.14.0, acorn@^8.8.2:
+acorn@^8.14.0:
   version "8.14.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.1.tgz#721d5dc10f7d5b5609a891773d47731796935dfb"
   integrity sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==
@@ -2782,11 +2782,11 @@ custom-event-polyfill@^1.0.7:
   integrity sha512-TDDkd5DkaZxZFM8p+1I3yAlvM3rSr1wbrOliG4yJiwinMZN8z/iGL7BTlDkrJcYTmgUSb4ywVCc3ZaUtOtC76w==
 
 datatables.net-bs5@>=1.11.3:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/datatables.net-bs5/-/datatables.net-bs5-2.3.0.tgz#36344ee116d8ad644476d47974eb7b26cfe256e5"
-  integrity sha512-JvcYrf2kEVzHY7NKsJxV132kehhc5+iRIpZAYmYqSW52yCcMiQYWtw1Z4+Wb/FMbJDQwP9exCtTwroLYPKwkeQ==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/datatables.net-bs5/-/datatables.net-bs5-2.3.1.tgz#167a86c4ab138fe6eb7f653fb4c64e3ade0d3d7a"
+  integrity sha512-bUwsW7cIR8EDyiedQv6OKGF5ouxkFjaODmtEd7NRtpoZixAZDScmIrxe9cddjS0EybpC2gYslKs+o03E8tkCEA==
   dependencies:
-    datatables.net "2.3.0"
+    datatables.net "2.3.1"
     jquery ">=1.7"
 
 datatables.net-bs5@~1.10.25:
@@ -2907,10 +2907,10 @@ datatables.net-select@~1.3.3:
     datatables.net ">=1.11.3"
     jquery ">=1.7"
 
-datatables.net@2.3.0, datatables.net@>=1.10.8, datatables.net@>=1.11.3, datatables.net@^2:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-2.3.0.tgz#2d9a040dbbf03b8fe6afb6134f57a94fa7744982"
-  integrity sha512-IX5Dsc7bTNqI3RyT4B7imtFicLMCg7ZLwwx/gvR6cbwYgfG+mLX2KAVm7BNmnwOhUdMMcGSGSE19RpTn31TTGQ==
+datatables.net@2.3.1, datatables.net@>=1.10.8, datatables.net@>=1.11.3, datatables.net@^2:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-2.3.1.tgz#fcb61efd42fe64627fb9042637f1d93872268e70"
+  integrity sha512-pRXZuk3oR7P5kTl/CRvopcTihlvmZiY+xSBjbNI6e8MjYtgZQodWEqLUUOrIZeLH8CfxapPR/Bmb0NKAvILP5g==
   dependencies:
     jquery ">=1.7"
 
@@ -3251,9 +3251,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.149:
-  version "1.5.154"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.154.tgz#82430d66848efef703a3b643fb2a682bd08ae26b"
-  integrity sha512-G4VCFAyKbp1QJ+sWdXYIRYsPGvlV5sDACfCmoMFog3rjm1syLhI41WXm/swZypwCIWIm4IFLWzHY14joWMQ5Fw==
+  version "1.5.155"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.155.tgz#809dd0ae9ae1db87c358e0c0c17c09a2ffc432d1"
+  integrity sha512-ps5KcGGmwL8VaeJlvlDlu4fORQpv3+GIcF5I3f9tUKUlJ/wsysh6HU8P5L1XWRYeXfA0oJd4PyM8ds8zTFf6Ng==
 
 elliptic@^6.5.3, elliptic@^6.5.5:
   version "6.6.1"
@@ -6284,9 +6284,9 @@ sass-loader@12.1.0:
     neo-async "^2.6.2"
 
 sass@^1.49.8:
-  version "1.88.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.88.0.tgz#cd1495749bebd9e4aca86e93ee60b3904a107789"
-  integrity sha512-sF6TWQqjFvr4JILXzG4ucGOLELkESHL+I5QJhh7CNaE+Yge0SI+ehCatsXhJ7ymU1hAFcIS3/PBpjdIbXoyVbg==
+  version "1.89.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.89.0.tgz#6df72360c5c3ec2a9833c49adafe57b28206752d"
+  integrity sha512-ld+kQU8YTdGNjOLfRWBzewJpU5cwEv/h5yyqlSeJcj6Yh8U4TDA9UA5FPicqDz/xgRPWRSYIQNiFks21TbA9KQ==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
@@ -6973,12 +6973,12 @@ terser@^4.6.3:
     source-map-support "~0.5.12"
 
 terser@^5.31.1, terser@^5.9.0:
-  version "5.39.1"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.39.1.tgz#1c80e6bde2b362c6f9f3e79e295c228a3882d983"
-  integrity sha512-Mm6+uad0ZuDtcV8/4uOZQDQ8RuiC5Pu+iZRedJtF7yA/27sPL7d++In/AJKpWZlU3SYMPPkVfwetn6sgZ66pUA==
+  version "5.39.2"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.39.2.tgz#5a1626030724a672e2e5b5c9cd9070308c20e8f9"
+  integrity sha512-yEPUmWve+VA78bI71BW70Dh0TuV4HHd+I5SHOAfS1+QBOmvmCiiffgjR8ryyEd3KIfvPGFqoADt8LdQ6XpXIvg==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
-    acorn "^8.8.2"
+    acorn "^8.14.0"
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
