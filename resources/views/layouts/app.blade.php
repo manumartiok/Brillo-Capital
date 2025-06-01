@@ -103,18 +103,18 @@
     <div class="col-12 col-md-6 col-lg-3">
       <ul>
         <h3>Nosotros</h3>
-        <li><a href="https://www.google.com.ar/">Política de privacidad</a></li>
-        <li><a href="https://www.google.com.ar/">Términos y condiciones</a></li>
-        <li><a href="https://www.google.com.ar/">Política de envío</a></li>
+        <li><a href="">Política de privacidad</a></li>
+        <li><a href="">Términos y condiciones</a></li>
+        <li><a href="">Política de envío</a></li>
       </ul>
     </div>
     <div class="col-12 col-md-6 col-lg-3">
       <ul>
         <h3>Ayuda</h3>
-        <li><a href="https://www.google.com.ar/">Mis pedidos</a></li>
-        <li><a href="https://www.google.com.ar/">Cuidado del producto</a></li>
-        <li><a href="https://www.google.com.ar/">Garantía</a></li>
-        <li><a href="https://www.google.com.ar/">Preguntas frecuentes</a></li>
+        <li><a href="">Mis pedidos</a></li>
+        <li><a href="">Cuidado del producto</a></li>
+        <li><a href="">Garantía</a></li>
+        <li><a href="">Preguntas frecuentes</a></li>
       </ul>
     </div>
     <div class="col-12 col-md-6 col-lg-3">

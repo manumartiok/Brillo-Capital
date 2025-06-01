@@ -19,7 +19,7 @@ $configData = Helper::appClasses();
 
 </style>
 
-<div class="row">
+<div class="row" id="app">
   <div class="col-lg-12">
     <div class="card mb-4">
       <div class="card-header d-flex justify-content-between align-items-center">
@@ -37,9 +37,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
               <label class="form-label" for="fondo_url">Nosotros Fondo</label>
               @if (!empty($nosotros->fondo_url))
-                <img src="{{ $nosotros->fondo_url }}" alt="Fondo Nosotros" style="width: 20%;" class="img-thumbnail mb-3">
+                <img :src=" foto.fondo_url || '{{  $nosotros->fondo_url }}'" alt="Fondo Nosotros" style="width: 20%;" class="img-thumbnail mb-3">
               @endif
-              <input type="file" name="fondo_url" class="form-control" id="fondo_url"/>
+              <input type="file" name="fondo_url" class="form-control" id="fondo_url" @change="subirFoto"/>
             </div>
           
             <!-- Texto TinyMCEe -->

@@ -7,7 +7,7 @@ $configData = Helper::appClasses();
 @section('title', 'Actualizando Item')
 
 @section('content')
-<div class="row">
+<div class="row" id="app">
   <!-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -28,8 +28,8 @@ $configData = Helper::appClasses();
             <input type="hidden" name="carruselitem_id" value="{{$carruselitem->id}}">
             <div class="mb-3">
             <label class="form-label" for="basic-default-company">Imagen del item</label>
-            <img src="{{$carruselitem->photo_path}}" alt="" style="width:20%" class="form-control">
-            <input type="file" name="photo_path" value="{{$carruselitem->photo_path}}" class="form-control" id="basic-default-email"/>
+            <img :src=" foto.photo_path || '{{$carruselitem->photo_path}}'" alt="" style="width:20%" class="form-control">
+            <input type="file" name="photo_path"  class="form-control" id="basic-default-email" @change="subirFoto"/>
           </div>
           <div>
           <label class="form-label" for="selectpickerIcons">Producto</label>
@@ -55,6 +55,6 @@ $configData = Helper::appClasses();
         </form>
       </div>
     </div>
-    </div-col-lg-12>
+    </div>
 </div>
 @endsection

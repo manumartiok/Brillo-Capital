@@ -20,9 +20,9 @@ $customizerHidden = 'customizer-hide';
       <div class="flex-row text-center mx-auto">
         {{-- <img src="{{asset('assets/img/pages/login-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/login-light.png" data-app-dark-img="pages/login-dark.png"> --}}
         <div class="mx-auto">
-          <h3>Discover the powerful admin template 🥳</h3>
+          <h3></h3>
           <p>
-            Perfectly suited for all level of developers which helps you to <br> kick start your next big projects & Applications.
+         
           </p>
         </div>
       </div>
@@ -33,14 +33,9 @@ $customizerHidden = 'customizer-hide';
     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
         <!-- Logo -->
-        <div class="app-brand justify-content-center mb-4">
-          <a href="{{url('/')}}" class="app-brand-link gap-2 mb-2">
-            <span class="app-brand-logo demo">@include('_partials.macros')</span>
-            <span class="app-brand-text demo h3 mb-0 fw-bold">{{config('variables.templateName')}}</span>
-          </a>
-        </div>
+        
         <!-- /Logo -->
-        <h4 class="mb-2">Welcome to {{config('variables.templateName')}}! 👋</h4>
+        <h4 class="mb-2">Welcome 👋</h4>
         <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
         @if (session('status'))

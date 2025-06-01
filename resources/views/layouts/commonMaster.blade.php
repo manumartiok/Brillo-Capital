@@ -18,6 +18,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
 
+  <!-- Vue -->
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+   <script src="{{ asset('js/vue.js') }}" defer></script>
 
  
   <!-- Include Styles -->

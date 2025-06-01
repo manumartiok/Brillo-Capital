@@ -7,7 +7,7 @@ $configData = Helper::appClasses();
 @section('title', 'Actualizar Casa')
 
 @section('content')
-<div class="row">
+<div class="row" id="app">
   <div-col-lg-12>
     <div class="card mb-4">
       <div class="card-header d-flex justify-content-between align-items-center">
@@ -23,9 +23,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
     <label class="form-label" for="logo-url">Logo</label>
     @if (isset($casa->logo_url) && !empty($casa->logo_url)) <!-- Verifica que la propiedad exista y no esté vacía -->
-        <img src="{{ $casa->logo_url }}" alt="Logo" style="width: 20%;" class="img-thumbnail">
+        <img :src=" foto.logo_url || '{{ $casa->logo_url }}'" alt="Logo" style="width: 20%;" class="img-thumbnail">
     @endif
-    <input type="file" name="logo_url" class="form-control" id="logo_url"/>
+    <input type="file" name="logo_url" class="form-control" id="logo_url" @change="subirFoto"/>
 </div>
 
             <!-- Título de Productos -->
@@ -42,9 +42,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
               <label class="form-label" for="producto1_foto">Foto Producto 1</label>
               @if ($casa->producto1_foto)
-                <img src="{{ $casa->producto1_foto }}" alt="Producto 1" style="width: 20%;" class="img-thumbnail">
+                <img :src=" foto.producto1_foto || '{{ $casa->producto1_foto }}'" alt="Producto 1" style="width: 20%;" class="img-thumbnail">
               @endif
-              <input type="file" name="producto1_foto" class="form-control" id="producto1_foto"/>
+              <input type="file" name="producto1_foto" class="form-control" id="producto1_foto" @change="subirFoto"/>
             </div>
             <div class="mb-3">
               <label class="form-label" for="producto1_texto">Texto Producto 1</label>
@@ -63,9 +63,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
               <label class="form-label" for="producto2_foto">Foto Producto 2</label>
               @if ($casa->producto2_foto)
-                <img src="{{ $casa->producto2_foto }}" alt="Producto 2" style="width: 20%;" class="img-thumbnail">
+                <img :src=" foto.producto2_foto || '{{ $casa->producto2_foto }}'" alt="Producto 2" style="width: 20%;" class="img-thumbnail">
               @endif
-              <input type="file" name="producto2_foto" class="form-control" id="producto2_foto"/>
+              <input type="file" name="producto2_foto" class="form-control" id="producto2_foto" @change="subirFoto"/>
             </div>
             <div class="mb-3">
               <label class="form-label" for="producto2_texto">Texto Producto 2</label>
@@ -84,9 +84,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
               <label class="form-label" for="producto3_foto">Foto Producto 3</label>
               @if ($casa->producto3_foto)
-                <img src="{{ $casa->producto3_foto }}" alt="Producto 3" style="width: 20%;" class="img-thumbnail">
+                <img :src=" foto.producto3_texto || '{{ $casa->producto3_foto }}'" alt="Producto 3" style="width: 20%;" class="img-thumbnail">
               @endif
-              <input type="file" name="producto3_foto" class="form-control" id="producto3_foto"/>
+              <input type="file" name="producto3_foto" class="form-control" id="producto3_foto" @change="subirFoto"/>
             </div>
             <div class="mb-3">
               <label class="form-label" for="producto3_texto">Texto Producto 3</label>
@@ -101,9 +101,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
               <label class="form-label" for="nosotros_foto1">Nosotros Foto 1</label>
               @if ($casa->nosotros_foto1)
-                <img src="{{ $casa->nosotros_foto1 }}" alt="Nosotros 1" style="width: 20%;" class="img-thumbnail">
+                <img :src=" foto.nosotros_texto1 || '{{ $casa->nosotros_foto1 }}'" alt="Nosotros 1" style="width: 20%;" class="img-thumbnail">
               @endif
-              <input type="file" name="nosotros_foto1" class="form-control" id="nosotros_foto1"/>
+              <input type="file" name="nosotros_foto1" class="form-control" id="nosotros_foto1" @change="subirFoto"/>
             </div>
             <div class="mb-3">
               <label class="form-label" for="nosotros_texto1">Texto Nosotros 1</label>
@@ -114,9 +114,9 @@ $configData = Helper::appClasses();
             <div class="mb-3">
               <label class="form-label" for="nosotros_foto2">Nosotros Foto 2</label>
               @if ($casa->nosotros_foto2)
-                <img src="{{ $casa->nosotros_foto2 }}" alt="Nosotros 2" style="width: 20%;" class="img-thumbnail">
+                <img :src="foto.nosotros_foto2 || '{{ $casa->nosotros_foto2 }}'" alt="Nosotros 2" style="width: 20%;" class="img-thumbnail">
               @endif
-              <input type="file" name="nosotros_foto2" class="form-control" id="nosotros_foto2"/>
+              <input type="file" name="nosotros_foto2" class="form-control" id="nosotros_foto2" @change="subirFoto"/>
             </div>
             <div class="mb-3">
               <label class="form-label" for="nosotros_texto2">Texto Nosotros 2</label>

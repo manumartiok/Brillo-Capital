@@ -7,7 +7,7 @@ $configData = Helper::appClasses();
 @section('title', 'Actualizando foto carrusel')
 
 @section('content')
-<div class="row">
+<div class="row" id="app">
   <!-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -28,8 +28,8 @@ $configData = Helper::appClasses();
             <input type="hidden" name="fcarro_id" value="{{$fcarro->id}}">
             <div class="mb-3">
             <label class="form-label" for="basic-default-company">Imagen del carrusel</label>
-            <img src="{{$fcarro->image_url}}" alt="" style="width:20%" class="form-control">
-            <input type="file" name="image_url" value="{{$fcarro->image_url}}" class="form-control" id="basic-default-email"/>
+            <img :src="foto.image_url || '{{$fcarro->image_url}}'" alt="" style="width:20%" class="form-control">
+            <input type="file" name="image_url"  class="form-control" id="basic-default-email" @change="subirFoto"/>
           </div>
           <div class="mb-3">
             <label class="form-label" for="basic-default-fullname">Nombre</label>
