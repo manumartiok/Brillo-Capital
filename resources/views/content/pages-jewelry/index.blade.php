@@ -10,6 +10,13 @@
 
 @section('content')
      <!-- carrousel  -->
+
+     <style>
+        .card-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            }
+     </style>
     <section>
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -47,7 +54,7 @@
         <h1 class="display-4 mb-4">{{$casa->productos_titulo}}</h1>
         <div class="row justify-content-center p-2 g-5">
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="shadow-sm border-0 p-2 h-100 d-flex flex-column">
+                <div class="shadow-sm border-0 p-2 h-100 d-flex flex-column card-hover">
                     <h4>{{$casa->producto1_titulo}}</h4>
                     <a href="joyeria" class="mb-2">
                         <img src="{{$casa->producto1_foto}}" alt="" class="img-fluid">
@@ -58,7 +65,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="shadow-sm border-0 p-2 h-100 d-flex flex-column">
+                <div class="shadow-sm border-0 p-2 h-100 d-flex flex-column card-hover">
                     <h4>{{$casa->producto2_titulo}}</h4>
                     <a href="joyeria" class="mb-2">
                         <img src="{{$casa->producto2_foto}}" alt="" class="img-fluid">
@@ -69,7 +76,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="shadow-sm border-0 p-2 h-100 d-flex flex-column">
+                <div class="shadow-sm border-0 p-2 h-100 d-flex flex-column card-hover">
                     <h4>{{$casa->producto3_titulo}}</h4>
                     <a href="joyeria" class="mb-2">
                         <img src="{{$casa->producto3_foto}}" alt="" class="img-fluid">

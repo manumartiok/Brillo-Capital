@@ -5,6 +5,12 @@
     .container {
       min-height: 700px;
     }
+
+    .card-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            }
+     
 </style>
 <div class="container">
     <h2 class="text-center mb-4">Resultados de búsqueda para: "{{ $query }}"</h2>
@@ -14,7 +20,7 @@
     @else
         <div class="row">
             @foreach($resultados as $resultado)
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4  card-hover">
                     <div class="card shadow-sm">
                         <a href="{{ route('producto.detalle', $resultado->id) }}" class="text-decoration-none">
                             <img src="{{ $resultado->img_producto }}" class="card-img-top rounded" alt="{{ $resultado->nombre_producto }}" style="height: 300px; object-fit: cover;">

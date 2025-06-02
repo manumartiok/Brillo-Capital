@@ -5,6 +5,7 @@ use App\Http\Controllers\WebUserController;
 use App\Http\Controllers\BusquedaController;
 use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\MiCuentaController;
+use App\Models\Producto;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,7 +119,7 @@ Route::get('/buscar', [BusquedaController::class, 'buscar'])->name('buscar');
 
 Route::get('/detalle/{id}', function ($id) {
     // Cargar el producto específico junto con el detalleTexto usando el ID
-    $producto = App\Models\Producto::with('pieza', 'material')->findOrFail($id);
+    $producto =Producto::with('pieza', 'material')->findOrFail($id);
     return view('content.pages-jewelry.detalle', compact('producto'));
 })->name('producto.detalle');
 

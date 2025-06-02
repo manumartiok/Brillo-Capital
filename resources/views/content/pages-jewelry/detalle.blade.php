@@ -38,7 +38,7 @@
             <div class="p-4 border rounded shadow-sm bg-light">
                 <span class="d-block fw-bold text-secondary">{{ $producto->pieza->tipo_pieza }} - {{ $producto->material->tipo_material }}</span>
                 <h2 class="mt-2">{{ $producto->nombre_producto }}</h2>
-                <h4 class="text-primary fw-bold">$<span id="producto-precio">{{ $producto->precio_producto }}</span></h4>
+                <h4 class="text-primary fw-bold">$<span id="producto-precio">{{ number_format($producto->precio_producto,2,',','.') }}</span></h4>
                 <p class="text-muted">{{ $producto->descripcion }}</p>
                 
                 <!-- Selección de talle según tipo de pieza -->

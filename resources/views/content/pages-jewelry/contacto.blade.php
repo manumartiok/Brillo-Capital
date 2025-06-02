@@ -10,6 +10,12 @@
 @section('title', 'Contacto')
 @section('content')
     <!-- contacto  -->
+
+    <style>
+      .links:hover{
+        text-decoration:underline;
+      }
+    </style>
     <section class="p-5 my-5" >
     <div class="container-fluid" >
   <div class="row g-5" >
@@ -17,7 +23,7 @@
       <h2>Contáctanos</h2>
       @foreach($redes as $red)
       <div class="p-1">
-        <i class="pe-1 {{$red->redsocial_icono}}"></i><a href="{{$red->redsocial_link}}">{{$red->redsocial_texto}}</a>
+        <i class="pe-1 {{$red->redsocial_icono}}"></i><a href="{{$red->redsocial_link}}" class="links">{{$red->redsocial_texto}}</a>
       </div>
       @endforeach
       @foreach($pagcontactos as $pagcontacto)

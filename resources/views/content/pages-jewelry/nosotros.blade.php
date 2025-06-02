@@ -25,11 +25,12 @@
   .contenedor-texto {
     max-width: 1000px; /* Ancho máximo */
     max-height: 100%; /* Evita que el contenido se desborde */
+    padding: 100px 0 100px 0;
   }
 </style>
 
 <section class="container-fluid nosotros d-flex justify-content-center align-items-center">
-  <div class="contenedor-texto m-4">
+  <div class="contenedor-texto">
     {!! $nosotro->contenido !!} <!-- Renderiza el contenido editado en Summernote -->
   </div>
 </section>

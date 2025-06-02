@@ -29,17 +29,28 @@
         color: gold; /* Rellenar la estrella con dorado */
 }
 
-.categoria:hover {
-    padding: 2px 6px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+   
 
-.material:hover {
-    padding: 2px 6px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    .categoria:hover {
+        font-weight:bold;
+        text-decoration:underline;
+    }
+
+    .material:hover {
+        font-weight:bold;
+        text-decoration:underline;
+    }
+
+     .categoria,.material{
+        transition: font-weight 0.15s ease, text-decoration 0.3s ease;
+    }
+
+
+    .card-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+        }
+     
 
 
 
@@ -113,7 +124,7 @@
                     </div>
                     <div class="row" id="productos-container">
                         @foreach($productos as $producto)
-                        <div class="col-12 col-sm-6 col-lg-4 producto" 
+                        <div class="col-12 col-sm-6 col-lg-4 producto card-hover" 
                             data-pieza="{{$producto->pieza->tipo_pieza}}" 
                             data-material="{{$producto->material->tipo_material}}"
                             data-precio="{{$producto->precio_producto}}">
@@ -126,7 +137,7 @@
                                     <a class="letra fw-semibold fs-5 text-dark" href="{{ route('producto.detalle', $producto->id) }}">
                                         {{$producto->nombre_producto}}
                                     </a>
-                                    <a href="{{ route('favoritos.toggle', $producto->id) }}" class="btn btn-sm favorito-toggle" data-id="{{ $producto->id }}">
+                                    <a href="{{ route('favoritos.toggle', $producto->id) }}" class=" btn-sm favorito-toggle" data-id="{{ $producto->id }}">
                                         @if(Auth::guard('web_user')->check())
                                             <i class="{{ Auth::guard('web_user')->user()->favoritos->contains('producto_id', $producto->id) ? 'bi bi-star-fill' : 'bi bi-star' }}"></i>
                                         @else
@@ -134,7 +145,7 @@
                                         @endif
                                     </a>
                                 </div>
-                                <p class="letra fw-semibold fs-6 text-body-secundary">${{$producto->precio_producto}}</p>
+                                <p class="letra fw-semibold fs-6 text-body-secundary">${{number_format($producto->precio_producto,2,',','.')}}</p>
                                 
                             </div>
                         </div>

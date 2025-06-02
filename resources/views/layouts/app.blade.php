@@ -70,7 +70,7 @@
                 <div class="d-flex justify-content-around align-items-center">
                     <form class="d-flex me-3" role="search" action="{{ route('buscar') }}" method="GET">
                         <input class="form-control me-2" type="search" name="query" placeholder="Buscar..." aria-label="Search">
-                        <button class="btn btn-outline-light" style="color:grey; border-color:grey;" type="submit">Buscar</button>
+                        <button class="btn btn-outline-light" style="color:black; border-color:grey;" type="submit">Buscar</button>
                     </form>
                     <a href="{{ route('cuenta') }}" class="text-decoration-none">
                         <i class="bi bi-person" style="font-size: 200%"></i>

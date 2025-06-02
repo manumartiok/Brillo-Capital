@@ -3,12 +3,19 @@
 @section('content')
 @auth('web_user')
 
+<style>
+        .card-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            }
+     </style>
+
 <div class="container-fluid">
     <h2 class="text-center">Mis Favoritos</h2>
-    <div class="row">
+    <div class="row ">
         @foreach ($favoritos as $favorito)
             <div class="col-md-4 p-3">
-                <div class="card shadow-sm border-light rounded">
+                <div class="card shadow-sm border-light rounded card-hover">
                     <!-- Enlace para redirigir al detalle de la pieza -->
                     <a href="{{ route('producto.detalle', $favorito->producto->id) }}" class="text-decoration-none">
                         <!-- Foto de la pieza obtenida desde la relación del producto -->
