@@ -12,7 +12,7 @@
             }
      
 </style>
-<div class="container">
+<div class="container py-5">
     <h2 class="text-center mb-4">Resultados de búsqueda para: "{{ $query }}"</h2>
 
     @if($resultados->isEmpty())
